@@ -1,0 +1,644 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117; /* Dark background for the page */
+    color: #c9d1d9; /* Muted grey for text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #161b22; /* Lighter grey to match the sections */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #58a6ff; /* Blue for headers */
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #c9d1d9; /* Muted grey for description */
+    font-size: 18px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #0d1117; /* Dark background to match body */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #777;
+}
+
+nav button:focus {
+    outline: none;
+    background-color: #888;
+}
+
+/* Editor Sections */
+.editor-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #161b22; /* Lighter grey for sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.editor-section:hover {
+    transform: translateY(-5px); /* Hover effect: Move up slightly */
+}
+
+.editor-card {
+    padding: 20px;
+}
+
+/* Section Titles and Paragraphs */
+.editor-card h2 {
+    color: #58a6ff; /* Blue for headers */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.editor-card p {
+    color: #c9d1d9; /* Muted grey for paragraphs */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    margin-bottom: 20px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+/* Buttons Inside Tabs */
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+/* Output Areas */
+.output {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #161b22; /* Lighter grey for output */
+    color: #c9d1d9;
+    min-height: 50px;
+    white-space: pre-wrap;
+}
+
+.output h3 {
+    color: #58a6ff; /* Blue color for the "Output" heading */
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #161b22; /* Lighter grey to match sections */
+    margin-top: 40px;
+}
+
+footer p {
+    color: #c9d1d9;
+    font-size: 14px;
+}
+.button-container button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #58a6ff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #296ca8;
+}
+
+.button-container {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+  /* Styling for the HTML Editor Section */
+  #html-code {
+    width: 100%;
+    height: 150px; /* Height of the text editor */
+    margin-bottom: 10px;
+}
+
+#html-output {
+    width: 100%;
+    height: 400px; /* Increased height of the rendered output box */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.button-container button {
+    margin-right: 10px; /* Add spacing between buttons */
+}
+/* Style for the iframe output */
+#html-output {
+    width: 100%; /* Make it fill the available width */
+    height: 400px; /* Increase the height for better visibility */
+    background-color: white; /* Set the background color to white */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 5px; /* Slightly rounded corners for aesthetics */
+    padding: 10px; /* Add some internal spacing if needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for better focus */
+}
+
+/* Ensure the textarea and iframe are aligned */
+.editor-section .output {
+    margin-top: 20px;
+}
+
+.editor-card textarea {
+    height: 150px; /* Adjust height of the textarea for uniformity */
+}
+
+/*JS Style for the theme dropdown to match buttons */
+#theme-selector {
+    padding: 10px 13px; /* Add padding for a button-like look */
+    font-size: 16px; /* Match button font size */
+    background-color: #58a6ff; /* Same background color as buttons */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#theme-selector:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Ensure dropdown doesn't look odd when expanded */
+#theme-selector option {
+    color: white; /* Keep dropdown options readable */
+    background-color: #58a6ff
+}
+.CodeMirror-placeholder {
+    color: gray; /* Placeholder text color */
+    font-style: italic; /* Italicize placeholder */
+}
+
+/* General button style for buttons and dropdown */
+.button-container button,
+#html-theme-selector {
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #58a6ff; /* Updated button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons and dropdown */
+.button-container button:hover,
+#html-theme-selector:hover {
+    background-color: #4185d4; /* Slightly darker shade for hover */
+}
+
+/* Dropdown-specific styling */
+#html-theme-selector {
+    appearance: none; /* Hide default dropdown arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    text-align: center; /* Center align text */
+    width: auto; /* Adjust width as per content */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Arrow position */
+    background-size: 12px; /* Arrow size */
+    padding-right: 30px; /* Space for the arrow */
+}
+/* Style for the theme selector to match buttons */
+select {
+    background-color: #58a6ff; /* Same background color as your buttons */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding for a button-like feel */
+    font-size: 16px; /* Match font size with buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    outline: none; /* Remove focus outline */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for theme selector */
+select:hover {
+    background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+/* Optional: Adjust appearance on focus */
+select:focus {
+    box-shadow: 0 0 5px #0056b3; /* Add a subtle focus shadow */
+}
+.editor-container {
+    display: flex;
+    flex-direction: row; /* Align input and output horizontally */
+    gap: 10px; /* Space between input and output */
+    height: 100%; /* Full height */
+}
+
+.input-section,
+.output-section {
+    flex: 1; /* Equal width */
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.input-section {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-right: 2px solid #333; /* Divider */
+}
+
+.output-section {
+    background-color: #252526;
+    padding: 10px;
+    color: #d4d4d4; /* Light text for visibility */
+}
+
+/* Editor Container for Input and Output Areas */
+.editor-container {
+    display: flex;
+    flex-direction: row; /* Align input and output horizontally */
+    gap: 20px; /* Space between input and output sections */
+    width: 100%; /* Occupy full width of the section */
+    height: 500px; /* Increased height for better usability */
+    max-width: 1200px; /* Optional: Limit max width for better alignment on large screens */
+    margin: 0 auto; /* Center container on the page */
+}
+
+/* Input and Output Sections */
+.input-section,
+.output-section {
+    flex: 1; /* Equal width for both sections */
+    overflow-y: auto; /* Add vertical scrolling if content overflows */
+    border-radius: 10px; /* Smooth corners for aesthetics */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+}
+
+/* Styling for Input Section */
+.input-section {
+    background-color: #1e1e1e; /* Dark background for input */
+    padding: 15px;
+    border-right: 2px solid #333; /* Divider between sections */
+    color: #c9d1d9; /* Light text for contrast */
+}
+
+/* Styling for Output Section */
+.output-section {
+    background-color: #252526; /* Slightly lighter background for output */
+    padding: 15px;
+    color: #d4d4d4; /* Light text for better readability */
+    border-left: 2px solid #333; /* Optional: Add a divider */
+}
+
+/* Textarea Adjustments */
+textarea {
+    width: 100%;
+    height: calc(100% - 20px); /* Dynamic height based on container size */
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    border: none; /* Remove border for a clean look */
+    border-radius: 5px;
+    resize: none; /* Prevent resizing to maintain layout integrity */
+    background-color: #0d1117;
+    color: #c9d1d9;
+    overflow: auto;
+}
+
+/* Output Area Enhancements */
+.output {
+    width: 100%;
+    height: calc(100% - 20px); /* Dynamic height based on container size */
+    padding: 10px;
+    background-color: #161b22; /* Consistent background color with other sections */
+    border-radius: 5px; /* Rounded corners */
+    white-space: pre-wrap; /* Preserve formatting of output text */
+    overflow: auto; /* Enable scrolling for large content */
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #161b22;
+}
+
+header h1 {
+    font-size: 48px;
+    color: #ffffff;
+}
+
+header h1 span {
+    color: #0969DA;
+}
+
+header p {
+    color: #c9d1d9;
+    margin-top: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #0d1117;
+    padding: 10px 0;
+}
+
+nav button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #0969DA;
+}
+
+.editor-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #161b22;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editor-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.editor-card {
+    flex: 1;
+}
+
+.output {
+    flex: 1;
+    background-color: #252526;
+    border-radius: 10px;
+    padding: 20px;
+    color: #c9d1d9;
+    overflow-y: auto;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    font-family: "Courier New", Courier, monospace;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #0969DA;
+}
+
+select {
+    padding: 10px;
+    background-color: #0969DA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+select:hover {
+    background-color: #0056b3;
+}
+
+.button-container button {
+    background-color: #0969DA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #161b22;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #c9d1d9;
+}
+/* Introductory Page Styles */
+/* Intro Section Styling */
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: #161b22; /* Semi-transparent white background */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 800px;
+}
+
+/* Title Styling */
+.intro-header h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: white; /* Plain white title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for better contrast */
+}
+
+.intro-header .subheading {
+    font-size: 1.25rem;
+    color: white;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Description Styling */
+.intro-content .description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Start Coding Button Styling */
+.start-button-container {
+    margin-top: 40px;
+}
+
+.start-button {
+    padding: 12px 30px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #0969da; /* Default blue color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+    background-color: #035fc7; /* Darker blue on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .intro-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-content {
+        padding: 0 15px;
+    }
+}
+
+/* Add this to your existing CSS */
+
+.intro-header {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.auth-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-buttons button:hover {
+    background-color: #555;
+}
+
+.intro-header h1 {
+    margin-bottom: 10px;
+}
+
+.intro-content {
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css">
+    <!-- Additional Themes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/theme/material-darker.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt/dist/skulpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/skulpt/dist/skulpt-stdlib.js"></script>
+</head>
+<body>
+<!-- Introductory Page -->
+<div id="intro-page" class="intro-section">
+    <header class="intro-header">
+        <h1>Welcome to CodeSphere</h1>
+        <p class="subheading">The ultimate 4-in-1 platform for developers, coders, and enthusiasts.</p>
+    </header>
+    <div class="intro-content">
+        <p class="description">
+            CodeSphere is an open-source platform designed to empower coders of all skill levels. 
+            With tools for JavaScript, Python, HTML, and even Voice-to-Code, it's the perfect place to learn, experiment, 
+            and build your coding skills.
+        </p>
+        
+    </div>
+    <div class="start-button-container">
+        <button id="start-coding-button" class="start-button">Let's Start Coding</button>
+    </div>
+</div>
+<div id="main-app" style="display: none;">  
+    
+    <header>
+        <h1>CodeSphere</h1>
+        <p>The ultimate code editor for practice!</p>
+        <div class="auth-buttons">
+            <button id="sign-in-button">Sign In</button>
+            <button id="sign-up-button">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button onclick="showSection('js-editor')">JavaScript Compiler</button>
+        <button onclick="showSection('python-editor')">Python Compiler</button>
+        <button onclick="showSection('html-editor')">HTML Editor</button>
+        <button onclick="showSection('voice-editor')">Voice-to-Code</button>
+    </nav>
+
+    <!-- JavaScript Compiler Section -->
+    <div id="js-editor" class="editor-section">
+        <div class="editor-card">
+            <h2>JavaScript Compiler</h2>
+            <p>All the logic that you need to learn and practice JavaScript will be accomplished by this JS Text Editor.</p>
+            <!-- Theme Selector -->
+            <label for="theme-selector">Choose Theme:</label>
+            <select id="theme-selector">
+                <option value="material-darker">Material Darker</option>
+                <option value="dracula">Dracula</option>
+                <option value="eclipse">Eclipse</option>
+            </select>
+                        <!-- CodeMirror Editor -->
+                        <div id="js-code-editor"></div>
+                        
+            <div class="button-container">
+                <button id="js-run-button">Run</button>
+                <button id="js-save-button">Save</button>
+                <button id="js-clear-all-button">Clear All</button>
+            </div>
+            <div class="output">
+                <h3>Output :</h3>
+                <div id="js-output"></div>
+            </div>
+        </div>
+    </div>    
+<!-- Python Compiler Section -->
+<div id="python-editor" class="editor-section" style="display: none;">
+    <div class="editor-card">
+        <h2>Python Compiler</h2>
+        <p>Practice Python programming with this text editor. Test your code right here!</p>
+
+        <!-- Theme Selector -->
+        <label for="python-theme-selector">Choose Theme:</label>
+        <select id="python-theme-selector">
+            <option value="material-darker" selected>Material Darker</option>
+            <option value="dracula">Dracula</option>
+            <option value="eclipse">Eclipse</option>
+            <option value="default">Default</option>
+        </select>
+
+        <!-- CodeMirror Editor -->
+        <div id="python-code-editor"></div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button id="python-run-button">Run</button>
+            <button id="python-save-button">Save</button>
+            <button id="python-clear-button">Clear All</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="output">
+            <h3>Output :</h3>
+            <div id="python-output"></div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Basic HTML Editor Section -->
+    <div id="html-editor" class="editor-section">
+        <div class="editor-card">
+            <h2>HTML Editor</h2>
+            <p>Write and test HTML code easily with this editor.</p>
+    
+            
+    
+            <!-- Theme Selector -->
+            <label for="html-theme-selector">Choose Theme:</label>
+            <select id="html-theme-selector">
+                <option value="material-darker" selected>Material Darker</option>
+                <option value="dracula">Dracula</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="default">Default</option>
+            </select>
+
+            <!-- CodeMirror Editor -->
+            <div id="html-code-editor"></div>
+    
+            <!-- Buttons -->
+            <div class="button-container">
+                <button id="html-save-button">Save</button>
+                <button id="html-clear-all-button">Clear All</button>
+            </div>
+    
+            <!-- Output Section -->
+            <div class="output">
+                <h3>Rendered Output:</h3>
+                <iframe id="html-output" style="width: 100%; height: 300px; background-color: white;"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    
+<!-- Voice-to-Code Section -->
+<div id="voice-editor" class="editor-section">
+    <div class="editor-card">
+        <h2>Voice-to-Code</h2>
+        <p>Use voice commands to generate code automatically. Speak and watch the code appear.</p>
+
+        <!-- CodeMirror Editor -->
+        <div id="voice-code-editor"></div>
+
+        <div class="button-container">
+            <button id="start-listening">Start Speaking</button>
+            <button id="stop-listening" style="display: none;">Stop Speaking</button>
+            <button id="voice-clear-last-word-button">Clear Last Word</button>
+            <button id="voice-clear-all-button">Clear All</button>
+            <button id="voice-copy-button">Copy</button>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mini-Project Team-13  </p>
+    </footer>
+    <script>
+        // Function to switch from the intro page to the main app
+        document.getElementById("start-coding-button").addEventListener("click", function () {
+            document.getElementById("intro-page").style.display = "none";
+            document.getElementById("main-app").style.display = "block";
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
